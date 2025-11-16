@@ -52,8 +52,8 @@ jobs:
             echo '```json'
             echo '{ "status": "ok" }'
             echo '```'
-            echo '**🚀 Link: ** https://hashem963988.github.io/static-website/'
-            echo ''
-            echo "_current files and directories:_"
+            echo '**🚀 Link:** https://hashem963988.github.io/static-website/'
+            echo '---'
+            echo "**_current files and directories:_**"
             echo "$(ls -la)"
           } >> "$GITHUB_STEP_SUMMARY"
