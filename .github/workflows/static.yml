@@ -44,14 +44,16 @@ jobs:
       - name: summary
         run: |
           {
-            echo '## Result'
+            echo '## Result 📈'
             echo ''
-            echo '- website packaged'
-            echo '- website deployed to GitHub Actions'
+            echo '- ✅ website packaged'
+            echo '- ✅ website deployed to GitHub Actions'
             echo ''
             echo '```json'
             echo '{ "status": "ok" }'
             echo '```'
-            echo '**Link:** https://hashem963988.github.io/static-website/'
+            echo '**🚀 Link: ** https://hashem963988.github.io/static-website/'
+            echo ''
+            echo "_current files and directories:_"
             echo "$(ls -la)"
           } >> "$GITHUB_STEP_SUMMARY"
