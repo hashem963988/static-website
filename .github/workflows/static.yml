@@ -10,7 +10,7 @@ on:
 
   # added by Hashem
   release:
-    types: [created, updated]
+    types: [created]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -63,3 +63,27 @@ jobs:
             echo "**_current files and directories:_**"
             echo "$(ls -la)"
           } >> "$GITHUB_STEP_SUMMARY"
+  validation:
+    needs: [deploy]
+    runs-on: ubuntu-latest
+    env:
+      PAGES_LINK: https://hashem963988.github.io/static-website/
+    steps:
+      # - name: test using cURL
+      #   run: curl ${{ env.PAGES_LINK }} -IL
+      - name: test using cURL
+        run: |
+          curl --silent ${{ env.PAGES_LINK }} -IL
+          if [ $? -eq 0 ]; then
+            {
+              echo '## Validation 🔍'
+              echo ''
+              echo '✅ This website is accessible from anywhere in the world 😁'
+            } >> "$GITHUB_STEP_SUMMARY"
+          else
+            {
+            echo '## Validation 🔍'
+            echo ''
+            echo '❌ This website is not accessible 😫'
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
