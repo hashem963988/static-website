@@ -41,3 +41,15 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: summary
+        run: |
+          {
+            echo '## Result'
+            echo ''
+            echo '- item one'
+            echo '- item two'
+            echo ''
+            echo '```json'
+            echo '{ "status": "ok" }'
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
