@@ -46,10 +46,11 @@ jobs:
           {
             echo '## Result'
             echo ''
-            echo '- item one'
-            echo '- item two'
+            echo '- website packaged'
+            echo '- website deployed to GitHub Actions'
             echo ''
             echo '```json'
             echo '{ "status": "ok" }'
             echo '```'
+            echo '**Link:** https://hashem963988.github.io/static-website/'
           } >> "$GITHUB_STEP_SUMMARY"
